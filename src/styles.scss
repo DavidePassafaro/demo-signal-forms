@@ -1,1 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles - Christmas Theme */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f7fa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #165b33;
+  border-radius: 5px;
+
+  &:hover {
+    background: #0d3f21;
+  }
+}
+
+/* Selection Color */
+::selection {
+  background: #c41e3a;
+  color: white;
+}
+
+::-moz-selection {
+  background: #c41e3a;
+  color: white;
+}
+
+/* Page Container */
+.page-container {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  h2 {
+    color: #c41e3a;
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+  }
+
+  p {
+    color: #555;
+    font-size: 1rem;
+  }
+}
