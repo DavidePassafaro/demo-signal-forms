@@ -12,14 +12,7 @@
         placeholder="Inserisci il tuo nome e cognome"
         type="text"
         class="signal-input"
-        [field]="letterForm.name"
       />
-
-      @if (letterForm.name().invalid() && letterForm.name().touched()) {
-        @for (error of letterForm.name().errors(); track error.kind) {
-          <div class="signal-error">{{ error.message }}</div>
-        }
-      }
     </div>
 
     <div class="signal-field">
@@ -29,64 +22,39 @@
         placeholder="Inserisci la tua età"
         type="number"
         class="signal-input"
-        [field]="letterForm.age"
       />
-
-      @if (letterForm.age().invalid() && letterForm.age().touched()) {
-        @for (error of letterForm.age().errors(); track error.kind) {
-          <div class="signal-error">{{ error.message }}</div>
-        }
-      }
     </div>
 
     <div class="signal-field">
       <label for="country">Dove vivi *</label>
-      <select id="country" class="signal-input" [field]="letterForm.address">
+      <select id="country" class="signal-input">
         <option value="roma">Roma Roma</option>
         <option value="roma-nord">Roma Nord</option>
         <option value="fuori-roma">Fuori Roma, ma dico a tutti che vivo a Roma</option>
         <option value="resto-del-mondo">Resto del mondo</option>
       </select>
-
-      @if (letterForm.address().invalid() && letterForm.address().touched()) {
-        @for (error of letterForm.address().errors(); track error.kind) {
-          <div class="signal-error">{{ error.message }}</div>
-        }
-      }
     </div>
 
     <div class="signal-field">
       <label for="behavior">Come è stato il tuo comportamento? *</label>
       <div class="signal-radios">
         <label class="signal-radio-item">
-          <input type="radio" value="good" [field]="letterForm.behavior" />
+          <input type="radio" value="good" />
           Molto Buono! 😇
         </label>
         <label class="signal-radio-item">
-          <input type="radio" value="fair" [field]="letterForm.behavior" />
+          <input type="radio" value="fair" />
           Abbastanza Buono 🤔
         </label>
         <label class="signal-radio-item">
-          <input type="radio" value="improving" [field]="letterForm.behavior" />
+          <input type="radio" value="improving" />
           In Miglioramento 😊
         </label>
         <label class="signal-radio-item">
-          <input type="radio" value="bad" [field]="letterForm.behavior" />
+          <input type="radio" value="bad" />
           Da Migliorare 😬
         </label>
-        @if (isNastyKid()) {
-          <label class="signal-radio-item">
-            <input type="radio" value="beast-of-hell" [field]="letterForm.behavior" />
-            Pessimo! 😡
-          </label>
-        }
       </div>
-
-      @if (letterForm.behavior().invalid() && letterForm.behavior().touched()) {
-        @for (error of letterForm.behavior().errors(); track error.kind) {
-          <div class="signal-error">{{ error.message }}</div>
-        }
-      }
     </div>
 
     <div class="signal-field">
@@ -96,14 +64,8 @@
         placeholder="Racconta a Babbo Natale i tuoi desideri..."
         rows="4"
         class="signal-input"
-        [field]="letterForm.message"
+        required
       ></textarea>
-
-      @if (letterForm.message().invalid() && letterForm.message().touched()) {
-        @for (error of letterForm.message().errors(); track error.kind) {
-          <div class="signal-error">{{ error.message }}</div>
-        }
-      }
     </div>
 
     <div class="signal-field">
@@ -113,14 +75,8 @@
         placeholder="Inserisci la tua email"
         type="email"
         class="signal-input"
-        [field]="letterForm.email"
+        required
       />
-
-      @if (letterForm.email().invalid() && letterForm.email().touched()) {
-        @for (error of letterForm.email().errors(); track error.kind) {
-          <div class="signal-error">{{ error.message }}</div>
-        }
-      }
     </div>
 
     <div class="signal-field">
@@ -130,17 +86,11 @@
         placeholder="Conferma la tua email"
         type="email"
         class="signal-input"
-        [field]="letterForm.confirmEmail"
+        required
       />
-
-      @if (letterForm.confirmEmail().invalid() && letterForm.confirmEmail().touched()) {
-        @for (error of letterForm.confirmEmail().errors(); track error.kind) {
-          <div class="signal-error">{{ error.message }}</div>
-        }
-      }
     </div>
 
-    <button type="submit" class="signal-btn-submit" [disabled]="letterForm().invalid()">
+    <button type="submit" class="signal-btn-submit">
       🎅🏼 Invia a Babbo Natale 🎄
     </button>
   </form>
